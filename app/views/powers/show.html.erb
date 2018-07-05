@@ -1,0 +1,10 @@
+<h1> <%= @power.name %> </h1>
+<label> Description: </label><br> <%= @power.description %>
+
+<br>
+<br>
+
+<div>
+    <%= link_to "Edit Power", edit_power_path(@power) %> <br>
+    <%= link_to "All Powers", powers_path %>
+</div>
