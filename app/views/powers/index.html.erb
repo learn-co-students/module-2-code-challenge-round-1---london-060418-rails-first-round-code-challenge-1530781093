@@ -1,12 +1,25 @@
-<h2>All Superpowers</h2>
+
+<h2><%= link_to "All Superpowers", powers_path %> </h2>
+
+<br>
+<%= form_tag(powers_path, method: :get) do %>
+  <%= text_field_tag :term %>
+  <%= submit_tag 'Search' %>
+<% end %>
+<br>
 
 <ul>
   <% @powers.each do |power| %>
     <li>
-      <%= power.name %>
+      <%= link_to power.name, power %>
       <br>
-      Description: <%= power.description %>
+        Description: <%= power.description %>
     </li>
     <br>
   <% end %>
 </ul>
+
+
+<br>
+<br>
+<%= link_to "Create a new power", new_power_path %>

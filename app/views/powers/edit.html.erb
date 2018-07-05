@@ -1,0 +1,17 @@
+
+<h1>Edit Power</h1>
+<%= render "form" %>
+
+<br>
+<br>
+
+<% if(flash[:errors] && flash[:errors].length > 0) %>
+    <%= render "errors/errors" %>
+<% end  %>
+
+<%= form_for @power, method: :delete do |f|%>
+    <%= f.submit "Delete Power" %>
+<% end %>
+
+<%= link_to "Cancel Edit", power_path(@power) %> <br>
+<%= link_to "Go Back To All", powers_path %>
